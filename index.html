@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ega Virga Yugantara — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body data-theme="dark">
+
+<!-- ───────────── LOADER ───────────── -->
+<div id="loader">
+  <div class="loader-inner">
+    <svg viewBox="0 0 100 100" class="loader-svg">
+      <circle cx="50" cy="50" r="45" class="loader-track"/>
+      <circle cx="50" cy="50" r="45" class="loader-fill"/>
+    </svg>
+    <span class="loader-text">EVY</span>
+  </div>
+</div>
+
+<!-- ───────────── CURSOR ───────────── -->
+<div id="cursor"></div>
+<div id="cursor-follower"></div>
+
+<!-- ───────────── NAVBAR ───────────── -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <span class="logo-char">E</span><span class="logo-char accent">V</span><span class="logo-char">Y</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#hero"       class="nav-link active" data-section="hero">Home</a></li>
+    <li><a href="#about"      class="nav-link"        data-section="about">About</a></li>
+    <li><a href="#skills"     class="nav-link"        data-section="skills">Skills</a></li>
+    <li><a href="#experience" class="nav-link"        data-section="experience">Experience</a></li>
+    <li><a href="#education"  class="nav-link"        data-section="education">Education</a></li>
+    <li><a href="#training"   class="nav-link"        data-section="training">Training</a></li>
+    <li><a href="#projects"   class="nav-link"        data-section="projects">Projects</a></li>
+    <li><a href="#contact"    class="nav-link"        data-section="contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button id="theme-toggle" title="Toggle Theme">
+      <span class="icon-sun">☀</span>
+      <span class="icon-moon">☾</span>
+    </button>
+    <button id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Drawer -->
+<div id="mobile-drawer">
+  <button id="drawer-close">✕</button>
+  <ul>
+    <li><a href="#hero"       class="drawer-link">Home</a></li>
+    <li><a href="#about"      class="drawer-link">About</a></li>
+    <li><a href="#skills"     class="drawer-link">Skills</a></li>
+    <li><a href="#experience" class="drawer-link">Experience</a></li>
+    <li><a href="#education"  class="drawer-link">Education</a></li>
+    <li><a href="#training"   class="drawer-link">Training</a></li>
+    <li><a href="#projects"   class="drawer-link">Projects</a></li>
+    <li><a href="#contact"    class="drawer-link">Contact</a></li>
+  </ul>
+</div>
+<div id="drawer-overlay"></div>
+
+<!-- ───────────── HERO ───────────── -->
+<section id="hero">
+  <canvas id="particles-canvas"></canvas>
+  <div class="hero-content">
+    <p class="hero-greeting reveal-up">Halo, saya</p>
+    <h1 class="hero-name reveal-up">
+      <span class="name-line">Ega Virga</span>
+      <span class="name-line accent-text">Yugantara</span>
+    </h1>
+    <div class="hero-roles reveal-up">
+      <span class="role-prefix">Seorang </span>
+      <span id="typed-role" class="typed-role"></span>
+      <span class="typed-cursor">|</span>
+    </div>
+    <p class="hero-summary reveal-up">
+      Lulusan Teknik Informatika Universitas Suryakancana dengan minat di bidang
+      teknologi informasi dan pengembangan perangkat lunak berbasis web.
+    </p>
+    <div class="hero-btns reveal-up">
+      <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
+      <a href="#contact"  class="btn btn-outline">Hubungi Saya</a>
+      <a href="#about"    class="btn btn-ghost">Download CV</a>
+    </div>
+    <div class="hero-stats reveal-up">
+      <div class="stat-item">
+        <span class="stat-num" data-target="3">0</span>
+        <span class="stat-label">Tahun Belajar</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="3">0</span>
+        <span class="stat-label">Proyek Selesai</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="6">0</span>
+        <span class="stat-label">Sertifikat</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="334">3.34</span>
+        <span class="stat-label">IPK</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual reveal-right">
+    <div class="avatar-ring">
+      <div class="avatar-inner">
+          <img src="foto-profil.jpg" alt="Ega Virga Yugantara" class="avatar-photo"/>
+        </div>
+      <div class="ring ring-1"></div>
+      <div class="ring ring-2"></div>
+      <div class="ring ring-3"></div>
+      <div class="floating-badge badge-1">S1 Informatika</div>
+      <div class="floating-badge badge-2">UI / UX</div>
+      <div class="floating-badge badge-3">Web Dev</div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="scroll-dot"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ───────────── ABOUT ───────────── -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">Tentang Saya</p>
+      <h2 class="section-title">Siapa <span class="accent">Saya?</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-card reveal-left">
+        <div class="about-avatar">
+          <div class="avatar-big">
+            <img src="foto-profil.jpg" alt="Ega Virga Yugantara" class="avatar-photo"/>
+          </div>
+          <div class="avatar-glow"></div>
+        </div>
+        <div class="about-contact-cards">
+          <div class="contact-chip">egavirga01@gmail.com</div>
+          <div class="contact-chip">088211380555</div>
+          <div class="contact-chip">Cianjur, Jawa Barat</div>
+        </div>
+      </div>
+      <div class="about-content reveal-right">
+        <h3 class="about-subtitle">Informatika Graduate &amp; Web Developer</h3>
+        <p class="about-text">
+          Saya adalah lulusan <strong>Teknik Informatika Universitas Suryakancana</strong>
+          memiliki passion mendalam di bidang teknologi informasi
+          dan pengembangan perangkat lunak berbasis web.
+        </p>
+        <p class="about-text">
+          Berpengalaman dalam <strong>UI/UX Design</strong>, <strong>Pengembangan Aplikasi</strong>,
+          dan <strong>Administrasi Sistem</strong>. Terbiasa bekerja dengan teliti, terstruktur,
+          dan mampu bekerja secara mandiri maupun dalam tim.
+        </p>
+        <p class="about-text">
+          Memiliki pengalaman nyata dalam mengembangkan sistem informasi berbasis web
+          dan administrasi profesional di lingkungan kerja sesungguhnya.
+        </p>
+        <div class="about-info-grid">
+          <div class="info-item">
+            <span class="info-label">Nama Lengkap</span>
+            <span class="info-value">Ega Virga Yugantara</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Pendidikan</span>
+            <span class="info-value">S1 Teknik Informatika</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Universitas</span>
+            <span class="info-value">Universitas Suryakancana</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">IPK</span>
+            <span class="info-value accent-plain">3.34 / 4.00</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Status</span>
+            <span class="info-value badge-available">Available for Work</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Lokasi</span>
+            <span class="info-value">Cianjur, Jawa Barat</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── SKILLS ───────────── -->
+<section id="skills" class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">Kemampuan</p>
+      <h2 class="section-title">Skills &amp; <span class="accent">Expertise</span></h2>
+    </div>
+
+    <div class="skill-filters reveal-up">
+      <button class="filter-btn active" data-filter="all">Semua</button>
+      <button class="filter-btn" data-filter="design">Design</button>
+      <button class="filter-btn" data-filter="dev">Development</button>
+      <button class="filter-btn" data-filter="tools">Tools</button>
+      <button class="filter-btn" data-filter="soft">Soft Skills</button>
+    </div>
+
+    <div class="skills-grid" id="skills-grid">
+      <div class="skill-card reveal-up" data-category="design">
+        <div class="skill-info">
+          <div class="skill-top"><span class="skill-name">UI/UX Design</span><span class="skill-pct">88%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="88"></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal-up" data-category="design">
+        <div class="skill-info">
+          <div class="skill-top"><span class="skill-name">Figma</span><span class="skill-pct">70%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal-up" data-category="design">
+        <div class="skill-info">
+          <div class="skill-top"><span class="skill-name">Canva</span><span class="skill-pct">80%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal-up" data-category="design">
+        <div class="skill-info">
+          <div class="skill-top"><span class="skill-name">Prototype &amp; Wireframe</span><span class="skill-pct">82%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="82"></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal-up" data-category="dev">
+        <div class="skill-info">
+          <div class="skill-top"><span class="skill-name">Front-End Development</span><span class="skill-pct">75%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal-up" data-category="dev">
+        <div class="skill-info">
+          <div class="skill-top"><span class="skill-name">SQL &amp; Database</span><span class="skill-pct">65%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="78"></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal-up" data-category="dev">
+        <div class="skill-info">
+          <div class="skill-top"><span class="skill-name">Pemodelan Sistem</span><span class="skill-pct">80%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal-up" data-category="dev">
+        <div class="skill-info">
+          <div class="skill-top"><span class="skill-name">Troubleshooting Sistem</span><span class="skill-pct">70%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="72"></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal-up" data-category="tools">
+        <div class="skill-info">
+          <div class="skill-top"><span class="skill-name">Microsoft Excel</span><span class="skill-pct">70%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="92"></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal-up" data-category="tools">
+        <div class="skill-info">
+          <div class="skill-top"><span class="skill-name">Microsoft Word</span><span class="skill-pct">90%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal-up" data-category="tools">
+        <div class="skill-info">
+          <div class="skill-top"><span class="skill-name">Google Spreadsheet</span><span class="skill-pct">88%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="88"></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal-up" data-category="tools">
+        <div class="skill-info">
+          <div class="skill-top"><span class="skill-name">PowerPoint</span><span class="skill-pct">87%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="87"></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal-up" data-category="soft">
+        <div class="skill-info">
+          <div class="skill-top"><span class="skill-name">Problem Solving</span><span class="skill-pct">85%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal-up" data-category="soft">
+        <div class="skill-info">
+          <div class="skill-top"><span class="skill-name">Communication</span><span class="skill-pct">87%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="87"></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal-up" data-category="soft">
+        <div class="skill-info">
+          <div class="skill-top"><span class="skill-name">Administrasi</span><span class="skill-pct">90%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal-up" data-category="soft">
+        <div class="skill-info">
+          <div class="skill-top"><span class="skill-name">Pelayanan Front Office</span><span class="skill-pct">83%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="83"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── EXPERIENCE ───────────── -->
+<section id="experience" class="section">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">Pengalaman</p>
+      <h2 class="section-title">Pengalaman <span class="accent">Kerja</span></h2>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item reveal-left">
+        <div class="timeline-dot current"></div>
+        <div class="timeline-card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Staff Administrasi dan Keuangan</h3>
+              <p class="card-company">Kost Changkat Indah &middot; Cianjur, Jawa Barat</p>
+            </div>
+            <span class="card-badge badge-current">Sekarang</span>
+          </div>
+          <div class="card-period">Januari 2025 — Sekarang</div>
+          <p class="card-desc">
+            Mengelola administrasi dan keuangan secara akurat, meliputi pencatatan transaksi,
+            pengelolaan dokumen, penyusunan laporan, serta memastikan kelancaran dan
+            ketertiban proses administrasi.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Administrasi</span>
+            <span class="tag">Keuangan</span>
+            <span class="tag">Laporan</span>
+            <span class="tag">Dokumen</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal-right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Resepsionis</h3>
+              <p class="card-company">Fatan Costel &middot; Cianjur, Jawa Barat</p>
+            </div>
+            <span class="card-badge">3 Bulan</span>
+          </div>
+          <div class="card-period">Juli 2024 — September 2024</div>
+          <ul class="card-list">
+            <li>Memberikan pelayanan sopan dan profesional kepada tamu sejak reservasi hingga kepulangan.</li>
+            <li>Menangani alur check-in dan check-out serta pengelolaan data administrasi tamu.</li>
+            <li>Memberikan informasi menyeluruh terkait fasilitas dan layanan hotel kepada tamu.</li>
+            <li>Merespons dan menangani kebutuhan maupun keluhan tamu secara cepat dan solutif.</li>
+          </ul>
+          <div class="card-tags">
+            <span class="tag">Front Office</span>
+            <span class="tag">Customer Service</span>
+            <span class="tag">Hospitality</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── EDUCATION ───────────── -->
+<section id="education" class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">Riwayat</p>
+      <h2 class="section-title">Riwayat <span class="accent">Pendidikan</span></h2>
+    </div>
+    <div class="edu-grid">
+
+      <div class="edu-card reveal-up" style="--delay:0.1s">
+        <div class="edu-year-badge">2022 — 2026</div>
+        <h3 class="edu-degree">S1 Teknik Informatika</h3>
+        <p class="edu-school">Universitas Suryakancana</p>
+        <p class="edu-location">Kab. Cianjur, Jawa Barat</p>
+        <div class="edu-gpa">
+          <span class="gpa-label">IPK</span>
+          <span class="gpa-value accent-plain">3.34 / 4.00</span>
+        </div>
+        <div class="edu-progress-wrap">
+          <div class="edu-progress-bar" style="--width:83.5%"></div>
+        </div>
+      </div>
+
+      <div class="edu-card reveal-up" style="--delay:0.2s">
+        <div class="edu-year-badge">2019 — 2022</div>
+        <h3 class="edu-degree">SMA / Sederajat</h3>
+        <p class="edu-school">SMA Negeri 1 Cilaku</p>
+        <p class="edu-location">Kab. Cianjur, Jawa Barat</p>
+        <div class="edu-gpa">
+          <span class="gpa-label">Jurusan</span>
+          <span class="gpa-value">IPS</span>
+        </div>
+      </div>
+
+      <div class="edu-card reveal-up" style="--delay:0.3s">
+        <div class="edu-year-badge">2016 — 2019</div>
+        <h3 class="edu-degree">SMP / Sederajat</h3>
+        <p class="edu-school">SMP Negeri 2 Cibinong</p>
+        <p class="edu-location">Kab. Cianjur, Jawa Barat</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── TRAINING ───────────── -->
+<section id="training" class="section">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">Sertifikat</p>
+      <h2 class="section-title">Pelatihan &amp; <span class="accent">Sertifikat</span></h2>
+    </div>
+    <div class="cert-grid">
+
+      <div class="cert-card reveal-up" style="--delay:0.05s">
+        <div class="cert-org">Teknologi Informasi &amp; Komunikasi</div>
+        <h3 class="cert-title">Pelatihan Microsoft Excel</h3>
+        <p class="cert-sub">dari Nol untuk Dunia Kerja</p>
+        <p class="cert-desc">Dasar penggunaan Excel untuk mengolah data, format, rumus, tabel, dan pengelolaan data sederhana.</p>
+        <div class="cert-footer">
+          <span class="cert-date">September 2026</span>
+          <span class="cert-type free">Kelas Gratis</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal-up" style="--delay:0.1s">
+        <div class="cert-org">Teknologi Informasi &amp; Komunikasi</div>
+        <h3 class="cert-title">Pelatihan Microsoft Word</h3>
+        <p class="cert-sub">Dokumen Rapi &amp; Profesional</p>
+        <p class="cert-desc">Teknik membuat, mengatur, dan menyusun dokumen secara rapi, profesional dan mudah dibaca.</p>
+        <div class="cert-footer">
+          <span class="cert-date">September 2026</span>
+          <span class="cert-type free">Kelas Gratis</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal-up" style="--delay:0.15s">
+        <div class="cert-org">Teknologi Informasi &amp; Komunikasi</div>
+        <h3 class="cert-title">Pelatihan SQL Lanjutan</h3>
+        <p class="cert-sub">Query Kompleks &amp; Database</p>
+        <p class="cert-desc">Pengelolaan database, query kompleks, JOIN, subquery, dan analisis data mendalam.</p>
+        <div class="cert-footer">
+          <span class="cert-date">September 2026</span>
+          <span class="cert-type free">Kelas Gratis</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal-up" style="--delay:0.2s">
+        <div class="cert-org">Teknologi Informasi &amp; Komunikasi</div>
+        <h3 class="cert-title">Riset Pengguna &amp; Design Thinking</h3>
+        <p class="cert-sub">User-Centered Design</p>
+        <p class="cert-desc">Tahapan Empathize, Define, Ideate, Prototype, dan Test untuk menghasilkan solusi yang relevan.</p>
+        <div class="cert-footer">
+          <span class="cert-date">September 2026</span>
+          <span class="cert-type free">Kelas Gratis</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal-up" style="--delay:0.25s">
+        <div class="cert-org">MathWorks</div>
+        <h3 class="cert-title">Image Processing Onramp</h3>
+        <p class="cert-sub">Pengolahan Citra Digital</p>
+        <p class="cert-desc">Dasar pengolahan citra digital, teknik memproses, menganalisis, serta meningkatkan kualitas gambar.</p>
+        <div class="cert-footer">
+          <span class="cert-date">Mei 2025</span>
+          <span class="cert-type paid">MathWorks</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal-up" style="--delay:0.3s">
+        <div class="cert-org">MathWorks</div>
+        <h3 class="cert-title">Pelatihan Matlab Onramp</h3>
+        <p class="cert-sub">Komputasi Numerik</p>
+        <p class="cert-desc">Pengenalan MATLAB untuk komputasi teknik, pengolahan data numerik dan visualisasi hasil analisis.</p>
+        <div class="cert-footer">
+          <span class="cert-date">Mei 2025</span>
+          <span class="cert-type paid">MathWorks</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── PROJECTS ───────────── -->
+<section id="projects" class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">Pencapaian</p>
+      <h2 class="section-title">Proyek &amp; <span class="accent">Pencapaian</span></h2>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card featured reveal-up">
+        <div class="project-label">Tugas Akhir</div>
+        <div class="project-visual project-visual-img">
+          <img src="kost-rekomendasi.png" alt="Sistem Informasi Kost dengan Rekomendasi Kamar" class="project-screenshot"/>
+        </div>
+        <div class="project-body">
+          <span class="project-year">2026</span>
+          <h3 class="project-title">Sistem Informasi Kost dengan Rekomendasi Kamar</h3>
+          <p class="project-desc">
+            Sistem informasi kost berbasis web dengan fitur rekomendasi kamar kost untuk mahasiswa
+            menggunakan metode <strong>Content-Based Filtering</strong> dan algoritma
+            <strong>Cosine Similarity</strong>. Studi kasus pada Kost Changkat Indah 1.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Web-Based</span>
+            <span class="tech-tag">Content-Based Filtering</span>
+            <span class="tech-tag">Cosine Similarity</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal-up" style="--delay:0.15s">
+        <div class="project-label">Kerja Praktik</div>
+        <div class="project-visual project-visual-img">
+          <img src="kost-hasanah.png" alt="Sistem Informasi Pengelolaan Kost Pondok Hasanah" class="project-screenshot"/>
+        </div>
+        <div class="project-body">
+          <span class="project-year">2026</span>
+          <h3 class="project-title">Sistem Informasi Pengelolaan Kost Pondok Hasanah</h3>
+          <p class="project-desc">
+            Sistem informasi berbasis web untuk membantu pengelolaan data kost, kamar, penghuni,
+            fasilitas, pembayaran, dan <strong>booking online</strong>.
+            Dikerjakan sebagai bagian dari Kerja Praktik.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Web-Based</span>
+            <span class="tech-tag">Booking Online</span>
+            <span class="tech-tag">Manajemen Kost</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card milestone reveal-up" style="--delay:0.3s">
+        <div class="project-label">Milestone</div>
+        <div class="project-visual milestone-visual">
+          <div class="milestone-text">S1</div>
+        </div>
+        <div class="project-body">
+          <span class="project-year">2026</span>
+          <h3 class="project-title">Lulus Sarjana Teknik Informatika</h3>
+          <p class="project-desc">
+            Menyelesaikan pendidikan Strata 1 (S1) Teknik Informatika di Universitas Suryakancana
+            dengan menyelesaikan tugas akhir dan seluruh persyaratan akademik dengan IPK 3.34.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">S1 Informatika</span>
+            <span class="tech-tag">IPK 3.34</span>
+            <span class="tech-tag">Universitas Suryakancana</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── CONTACT ───────────── -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">Hubungi Saya</p>
+      <h2 class="section-title">Let's <span class="accent">Connect</span></h2>
+      <p class="section-subtitle">Saya terbuka untuk peluang kerja, kolaborasi, atau sekadar berkenalan.</p>
+    </div>
+    <div class="contact-wrapper">
+      <div class="contact-info reveal-left">
+        <h3 class="contact-info-title">Informasi Kontak</h3>
+
+        <div class="contact-item">
+          <div class="contact-icon-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <div>
+            <p class="contact-label">Email</p>
+            <a href="mailto:egavirga01@gmail.com" class="contact-value">egavirga01@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.06 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <p class="contact-label">WhatsApp / Telepon</p>
+            <a href="tel:088211380555" class="contact-value">088211380555</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <p class="contact-label">Lokasi</p>
+            <p class="contact-value">KP. Ankola, Desa Sukajadi, Kec. Cibinong, Kab. Cianjur</p>
+          </div>
+        </div>
+
+        <div class="contact-socials">
+          <a href="mailto:egavirga01@gmail.com" class="social-btn" title="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+          <a href="tel:088211380555" class="social-btn" title="Phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.06 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form reveal-right" id="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Nama Lengkap</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required/>
+            <span class="form-error" id="name-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="john@email.com" required/>
+            <span class="form-error" id="email-error"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subjek</label>
+          <input type="text" id="subject" name="subject" placeholder="Peluang Kerja / Kolaborasi" required/>
+          <span class="form-error" id="subject-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="message">Pesan</label>
+          <textarea id="message" name="message" rows="5" placeholder="Halo Ega, saya ingin..." required></textarea>
+          <span class="form-error" id="message-error"></span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+          <span class="btn-text">Kirim Pesan</span>
+          <span class="btn-loading hidden">Mengirim...</span>
+        </button>
+        <div class="form-success hidden" id="form-success">
+          Pesan berhasil dikirim! Saya akan segera menghubungi Anda.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── FOOTER ───────────── -->
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">EVY</div>
+    <p class="footer-name">Ega Virga Yugantara</p>
+    <p class="footer-tagline">S1 Teknik Informatika &middot; UI/UX &middot; Web Developer</p>
+    <div class="footer-links">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Ega Virga Yugantara</p>
+  </div>
+  <button id="back-to-top" title="Kembali ke atas">↑</button>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
